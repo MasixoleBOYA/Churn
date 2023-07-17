@@ -1,12 +1,15 @@
+import tensorflow
+import keras
 import pickle
 import json
+import flask
 from flask import Flask, request, app,jsonify, url_for, render_template, redirect,flash,session,escape
 import numpy as np
 import pandas as pd
 
 my_app = Flask(__name__)
 #loading the model
-model = pickle.load(open('churn_model.pkl','rb'))
+model = pickle.load(open('churn_model.pkl', 'rb'))
 @my_app.route('/')
 def home():
     return render_template('home.html')
