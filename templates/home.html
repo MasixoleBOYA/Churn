@@ -9,11 +9,71 @@
         Telecomm Customer Churn
     </h1>
     <h2>
-        The likelihood of a given customer to churn
+        Masixole Boya
     </h2>
     <p>
         This is the WebApp for predicting customer churn using Machine Learning (TensorFlow Keras: Artificial Neural Network).
     </p>
+    <form action="{{url_for ('predict')}}" method="post">
+        <input type="text" name="Country" placeholder="Country" required="required"/><br>
+        <label for= "Country" >Country:</label>
+        <select name="Country" required="required">
+            <option value="United States">United States</option>
+            <option value="Brazil">Brazil</option>
+
+      <input type="text" name="State" placeholder="State" required="required"/><br>
+
+      <input type="text" name="City" placeholder="City" required="required"/><br>
+
+      <input type="text" name="Zip Code" placeholder="Zip Code" required="required"/><br>
+
+      <input type="text" name="Latitude" placeholder="Latitude" required="required"/><br>
+
+      <input type="text" name="Longitude" placeholder="Longitude" required="required"/><br>
+
+      <input type="text" name="Gender" placeholder="Gender" required="required"/><br>
+
+      <input type="text" name="Senior Citizen" placeholder="Senior Citizen" required="required"/><br>
+
+      <input type="text" name="Partner" placeholder="Partner" required="required"/><br>
+
+      <input type="text" name="Dependents" placeholder="Dependents" required="required"/><br>
+
+      <input type="text" name="Tenure Months" placeholder="Tenure Months" required="required"/><br>
+
+      <input type="text" name="Phone Service" placeholder="Phone Service" required="required"/><br>
+
+      <input type="text" name="Multiple Lines" placeholder="Multiple Lines" required="required"/><br>
+
+      <input type="text" name="Internet Service" placeholder="Internet Service" required="required"/><br>
+
+      <input type="text" name="Online Security" placeholder="Online Security" required="required"/><br>
+
+      <input type="text" name="Online Backup" placeholder="Online Backup" required="required"/><br>
+
+      <input type="text" name="Device Protection" placeholder="Device Protection" required="required"/><br>
+
+      <input type="text" name="Tech Support" placeholder="Tech Support" required="required"/><br>
+
+      <input type="text" name="Streaming TV" placeholder="Streaming TV" required="required"/><br>
+
+      <input type="text" name="Streaming Movies" placeholder="Streaming Movies" required="required"/><br>
+
+      <input type="text" name="Contract" placeholder="Contract" required="required"/><br>
+
+      <input type="text" name="Paperless Billing" placeholder="Paperless Billing" required="required"/><br>
+
+      <input type="text" name="Payment Method" placeholder="Payment Method" required="required"/><br>
+
+      <input type="text" name="Monthly Charges" placeholder="Monthly Charges" required="required"/><br>
+
+      <input type="text" name="Total Charges" placeholder="Total Charges" required="required"/><br>
+
+      <input type="text" name="CLTV" placeholder="CLTV" required="required"/><br>
+
+      <button type="submit"  value="Predict"> Predict</button>
+</form>
+
 </body>
 </html>
 <!--<h1>-->
