@@ -8,12 +8,14 @@ import numpy as np
 import pandas as pd
 from sklearn.preprocessing import LabelEncoder, MinMaxScaler
 
+import sys
+sys.path.append('C:/Users/STAFF/Desktop/Git_Repos/Customer_churn')
+
 app = Flask(__name__)
 #loading the model
 model = pickle.load(open('churn_model.pkl', 'rb'))
 scaler = pickle.load(open('scaling.pkl','rb'))
-encoder = LabelEncoder()
-minmax = MinMaxScaler()
+from churn import X_train
 
 @app.route('/')
 def home():
@@ -23,19 +25,12 @@ def home():
 def predict_api():
     data= request.json['data']
     print(data)
-
-    #preprocess the data (encode and scale)
-    # for key in data:
-    #     if isinstance(data[key], str):
-    #         data[key] = encoder.fit_transform([data[key]])[0]
-
-
+    scaler.fit(X_train)
+    # data = list(data.values())
     new_data = scaler.transform(np.array(list(data.values())).reshape(1,-1))
-
-    # print(data)
-    # print(np.array(list(data.values())).reshape(1,-1))
-    #new_data = model.transform(np.array(list(data.values())).reshape(1,-1))
     output = model.predict(new_data)
+    output = output.tolist()
+
     print(output[0])
     return jsonify(output[0])
 if __name__ == "__main__":
