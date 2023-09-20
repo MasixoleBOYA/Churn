@@ -13,7 +13,7 @@ import matplotlib as plt
 
 
 
-doc = pd.read_excel("C:/Users/STAFF/Desktop/Git_Repos/Telco_customer_churn.xlsx")
+doc = pd.read_excel("C:/Users/STAFF/Desktop/Git_Repos/Customer_churn/Telco_customer_churn.xlsx")
 doc.sample(5)
 
 
