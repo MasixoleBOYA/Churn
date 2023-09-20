@@ -1,5 +1,6 @@
 import tensorflow
 from tensorflow import keras
+from keras.models import load_model
 import pickle
 import json
 import flask
@@ -13,7 +14,9 @@ sys.path.append('C:/Users/STAFF/Desktop/Git_Repos/Customer_churn')
 
 app = Flask(__name__)
 #loading the model
-model = pickle.load(open('churn_model.pkl', 'rb'))
+#model = pickle.load(open('churn_model.pkl', 'rb'))
+model = load_model('churn_model.h5')
+
 scaler = pickle.load(open('scaling.pkl','rb'))
 from churn import X_train
 
