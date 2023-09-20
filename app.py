@@ -1,5 +1,5 @@
 import tensorflow
-import keras
+from tensorflow import keras
 import pickle
 import json
 import flask
