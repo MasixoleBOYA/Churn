@@ -3,23 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <title>Churn Web App</title>
+    <style>
+        /* CSS styles for the ribbon */
+        .ribbon {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #007BFF; /* You can change the background color */
+            color: white;
+            text-align: center;
+            padding: 0.00000000000000005px 0;
+            font-size: 24px;
+        }
+
+        /* CSS styles for the content */
+        .content {
+            margin-top: 100px; /* Adjust this margin to provide space below the ribbon */
+            padding: 20px;
+        }
+         /* CSS styles for the form container */
+        .form-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Center horizontally */
+            text-align: center; /* Align form elements to the left */
+        }
+
+        /* CSS styles for form elements */
+        form input[type="text"], form button[type="submit"] {
+               margin-left: auto; /* Push elements to the right */
+               margin-right: auto; /* Push elements to the left */
+               display: block; /* Make each element occupy a separate line */
+               margin-bottom:0;
+        }
+    </style>
 </head>
 <body>
-    <h1>
-        Telecomm Customer Churn
-    </h1>
-    <h2>
-        Masixole Boya
+    <div class="ribbon">
+        <h1>Telecommucations Customer Churn Prediction</h1>
+    </div>
+    <div class="content">
+    <h2 style="text-align: center;">
+        A project by Masixole Boya
     </h2>
-    <p>
-        This is the WebApp for predicting customer churn using Machine Learning (TensorFlow Keras: Artificial Neural Network).
+    <p style="text-align: center;">
+        Enter numbers in the fields below. Please scroll down to click the PREDICT button after inserting your values
     </p>
     <form action="{{url_for ('predict')}}" method="post">
         <input type="text" name="Country" placeholder="Country" required="required"/><br>
-        <label for= "Country" >Country:</label>
+        <!--<label for= "Country" >Country:</label>
         <select name="Country" required="required">
             <option value="United States">United States</option>
-            <option value="Brazil">Brazil</option>
+            <option value="Brazil">Brazil</option>-->
 
       <input type="text" name="State" placeholder="State" required="required"/><br>
 
@@ -71,9 +107,11 @@
 
       <input type="text" name="CLTV" placeholder="CLTV" required="required"/><br>
 
-      <button type="submit"  value="Predict"> Predict</button>
+      <button type="submit"  value="Predict" style="background-color: orange; font-size: 25px;width: 200px; height: 40px;"> Predict</button>
 </form>
-
+<br>
+<br>
+    {{prediction_text}}
 </body>
 </html>
 <!--<h1>-->
