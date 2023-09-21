@@ -17,7 +17,7 @@ app = Flask(__name__)
 #model = pickle.load(open('churn_model.pkl', 'rb'))
 model = load_model('churn_model.h5')
 
-scaler = pickle.load(open('scaling.pkl','rb'))
+scaler = pickle.load(open('new_scaler.pkl','rb'))
 from churn import X_train
 
 @app.route('/')
