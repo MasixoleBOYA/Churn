@@ -43,9 +43,10 @@ def predict():
     final_input = scaler.transform(np.array(data).reshape(1,-1))
     print(final_input)
     output = model.predict(final_input)[0]
-    return render_template("home.html", prediction_text = "The churn estimation is {}".format(output))
+    return render_template("home.html", prediction_text = "The churn estimation for this customer is {}".format(output))
 
 if __name__ == "__main__":
-    app.run(debug= True)
+    app.run(host='0.0.0.0', port=10000, debug=True)
+
 
 
