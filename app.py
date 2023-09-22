@@ -8,6 +8,7 @@ from flask import Flask, request, app,jsonify, url_for, render_template, redirec
 import numpy as np
 import pandas as pd
 from sklearn.preprocessing import LabelEncoder, MinMaxScaler
+import re
 
 import sys
 sys.path.append('C:/Users/STAFF/Desktop/Git_Repos/Customer_churn')
@@ -40,6 +41,8 @@ def predict_api():
 @app.route('/predict',methods = ['POST'])
 def predict():
     data = [float(x) for x in request.form.values()]
+    data_dict = {re.sub(r'_', ' ', key): value for key, value in request.form.items()}
+
     final_input = scaler.transform(np.array(data).reshape(1,-1))
     print(final_input)
     output = model.predict(final_input)[0]
